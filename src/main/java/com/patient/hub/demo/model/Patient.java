@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @Table(name = "Patient")
 public class Patient {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @Column(nullable = false, length = 100)
     String patientName;

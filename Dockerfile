@@ -1,16 +1,9 @@
 # Environment
 ARG JAVA_VERSION=17
 
-FROM eclipse-temurin-${JAVA_VERSION} AS builder
-WORKDIR /app
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-COPY ./src ./src
-RUN ./mvnw clean install
-
-FROM eclipse-temurin-${JAVA_VERSION}
-WORKDIR /app
+FROM eclipse-temurin:21.0.2_13-jre-ubi9-minimal
+VOLUME /tmp
 EXPOSE 8080
-COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
-ENTRYPOINT ["java","-jar","/patienthubdemo.jar"]
+ARG JAR_FILE=target/demo-0.0.1-SNAPSHOT.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
