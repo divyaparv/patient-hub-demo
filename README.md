@@ -1,5 +1,5 @@
 # Patient-Hub-Demo
-A simple patient hub application to perform CRUD operations on patient data.
+A containerized patient hub application to perform CRUD operations on patient data.
 
 # Requirements
 - Java 17
