@@ -5,7 +5,7 @@ A containerized patient hub application to perform CRUD operations on patient da
 ```shell
 docker run -p 8080:8080 discdoc/patienthub:1.1 .
 ```
-![Docker App.png](src/main/resources/Docker App.png)
+![Docker App.png](Images/DockerApp.png)
 
 # API Endpoints
 This application hosts 4 REST APIs to create, read, update and delete a patient record.
@@ -16,12 +16,9 @@ This application hosts 4 REST APIs to create, read, update and delete a patient 
 |    PUT     | patient-hub/api/v1/update/{id}| To update an existing patient record with id   |
 |    DELETE  | patient-hub/api/v1/delete/{id}| To delete an existing patient record with id   |
 
-![Create Patient.png](src/main/resources/Create Patient.png)
+![Create Patient.png](Images/CreatePatient.png)
 
-![Get Patient.png](src/main/resources/Get patient.png)
-
-
-
+![Get Patient.png](Images/GetPatient.png)
 
 # Tech Stack
 * Java
@@ -30,4 +27,4 @@ This application hosts 4 REST APIs to create, read, update and delete a patient 
 * MySQL Database for higher environments
 
 # Pipeline
-![img.png](img.png)
+![img.png](Images/Architecture.png)
