@@ -1,10 +1,6 @@
 # Patient-Hub-Demo
 A containerized patient hub application to perform CRUD operations on patient data.
 
-# Requirements
-- Java 17
-- Maven 3
-
 # Running the application
 ```shell
 docker run -p 8080:8080 discdoc/patienthub:1.0 .
