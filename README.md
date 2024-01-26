@@ -24,3 +24,6 @@ This application hosts 4 REST APIs to create, read, update and delete a patient 
 * Spring Boot
 * H2 Database for local and dev environments
 * MySQL Database for higher environments
+
+# Pipeline
+![img.png](img.png)
