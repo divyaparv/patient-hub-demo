@@ -9,6 +9,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,7 +36,7 @@ public class PatientHubControllerTest {
                 .build();
 
         when(patientService.getPatient(any())).thenReturn(patient);
-        Patient actualPatient = patientHubController.getPatientById(1L);
-        assertEquals(patient, actualPatient);
+        ResponseEntity<Patient> actualPatientEntity = patientHubController.getPatientById(1L);
+        assertEquals(patient, actualPatientEntity.getBody());
     }
 }

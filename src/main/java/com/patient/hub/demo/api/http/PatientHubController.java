@@ -1,9 +1,13 @@
 package com.patient.hub.demo.api.http;
 
+import com.patient.hub.demo.exception.InvalidInputArgumentsException;
 import com.patient.hub.demo.model.Gender;
 import com.patient.hub.demo.model.Patient;
 import com.patient.hub.demo.service.PatientService;
 import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,14 +21,18 @@ public class PatientHubController {
     }
 
     @GetMapping("/get/{id}")
-    public Patient getPatientById(@PathVariable Long id) {
-        return patientService.getPatient(id);
+    @ResponseBody
+    public ResponseEntity<Patient> getPatientById(@PathVariable Long id) {
+        return new ResponseEntity<>(patientService.getPatient(id), HttpStatus.OK);
     }
 
     @PostMapping("/create")
     @ResponseBody
-    public Patient createPatientData(@RequestBody @Validated Patient patient) {
-        return patientService.addPatient(patient);
+    public ResponseEntity<Patient> createPatientData(@RequestBody @Validated Patient patient, BindingResult errors) {
+        if (errors.hasErrors()) {
+            throw new InvalidInputArgumentsException(errors);
+        }
+        return new ResponseEntity<>(patientService.addPatient(patient), HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")

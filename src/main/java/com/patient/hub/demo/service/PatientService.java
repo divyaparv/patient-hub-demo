@@ -17,9 +17,6 @@ public class PatientService {
     }
 
     public Patient addPatient(Patient patient) {
-        if (patient.getPatientName() == null || patient.getPatientName().isEmpty()) {
-            throw new IllegalArgumentException("Invalid input. Patient Name cannot be null or empty");
-        }
         return patientRepository.save(patient);
     }
 
