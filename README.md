@@ -4,7 +4,7 @@ A containerized patient hub application to perform CRUD operations on patient da
 
 # Running the application
 ```shell
-docker run -p 8080:8080 discdoc/patienthub:1.1 .
+docker run -p 8080:8080 discdoc/patienthub:1.2 .
 ```
 ![Docker App.png](Images/DockerApp.png)
 
