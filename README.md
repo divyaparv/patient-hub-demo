@@ -1,5 +1,5 @@
 # Patient-Hub-Demo
-# A sample project to demonstrate my Java, Spring Boot and REST API skills, which I completed in 2 days.
+### A sample project to demonstrate my Java, Spring Boot and REST API skills, which I completed in 2 days.
 A containerized patient hub application to perform CRUD operations on patient data.
 
 # Running the application
